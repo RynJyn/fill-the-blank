@@ -4,3 +4,38 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+button.option 
+{
+    border: none;
+    background: none;
+}
+
+button.option.correct 
+{
+    background: lightgreen;
+}
+
+button.option.incorrect 
+{
+    background: red;
+}
+
+button.option.actual 
+{
+    animation: highlightAnswer 1s 5;
+    background: gold;
+}
+
+@keyframes highlightAnswer
+{
+    0% {
+        background: gold;
+    }
+    50%{
+        background: initial;
+    }
+    100%{
+        background: gold;
+    }
+}
