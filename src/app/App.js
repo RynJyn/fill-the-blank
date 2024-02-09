@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+
+import Home from "./components/Home";
+import Game from "./components/Game";
+
+const STATE = {
+    HOME: "home",
+    PLAYING: "playing"
+};
 
 function App()
 {
-    return <></>;
+    const [appState, setAppState] = useState(STATE.HOME);
+    const [score, setScore] = useState(0);
+
+    let displayItem;
+    if(appState === STATE.PLAYING)
+    {
+        displayItem = <Game/>;
+    }
+    else 
+    {
+        displayItem = <Home changeState={()=>{setAppState(STATE.PLAYING)}}/>;
+    }
+
+    return (
+        <>
+            {displayItem}
+        </>
+    );
 }
 
 export default App;
