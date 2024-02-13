@@ -11,16 +11,19 @@ import SubmitBtn from "./ui/SubmitBtn";
 const questions = [
     {
         prompt: "Fill in the _____",
+        cat: "Games",
         options:  ["Balloon", "Blank", "Pit", "Form"],
         answer: 1
     },
     {
         prompt: "___, I've got a feeling we're not in Kansas anymore.",
+        cat: "Movies",
         options: ["Toto", "Tin Tin", "Uh Oh", "Yono"],
         answer: 0
     },
     {
         prompt: "The early bird gets the _____.",
+        cat: "Idioms",
         options: ["Morning dew", "Worm", "Virus", "AUX cord"],
         answer: 1
     }
@@ -93,6 +96,7 @@ function Game()
 
     return (<>
         <h2>Question: {(question + 1)}</h2>
+        <p>Category: {shuffledQuestions[question].cat}</p>
         <input type="text" readOnly value={shuffledQuestions[question].prompt}/>
             {
                 shuffledQuestions[question].options.map((o, i) => {
