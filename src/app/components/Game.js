@@ -81,7 +81,7 @@ function Game()
     let buttonToShow;
     if(userAnswer !== null)
     {
-        if((question + 1) == shuffledQuestions.length)
+        if((question + 1) === shuffledQuestions.length)
         {
             buttonToShow = <SubmitBtn text="Play again" onClick={reset}/>;
         }
