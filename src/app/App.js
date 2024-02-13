@@ -12,7 +12,6 @@ const STATE = {
 function App()
 {
     const [appState, setAppState] = useState(STATE.HOME);
-    const [score, setScore] = useState(0);
 
     let displayItem;
     if(appState === STATE.PLAYING)

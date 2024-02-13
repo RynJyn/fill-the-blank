@@ -40,6 +40,7 @@ function Game()
     const [question, setQuestion] = useState(0);
     const [userAnswer, setUserAnswer] = useState(null);
     const [hintRevealed, setHintRevealed] = useState(false);
+    const [score, setScore] = useState(0);
 
     function checkAnswer(value)
     {
