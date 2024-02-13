@@ -44,8 +44,21 @@ function Game()
 
     function checkAnswer(value)
     {
-        setUserAnswer(value);
-        setIsCorrect(value === shuffledQuestions[question].answer);
+        //Only check if the user hasn't already answered for this round. Cover the case in which the player may remove the "disabled" attribute from an option
+        if(userAnswer === null)
+        {
+            const award = 1000;
+            const multiplier = hintRevealed ? 0.5 : 1;
+            let isCorrect = value === shuffledQuestions[question].answer;
+
+            if(isCorrect)
+            {
+                setScore(score + (award * multiplier));
+            }
+
+            setUserAnswer(value);
+            setIsCorrect(isCorrect);
+        }
     }
 
     function goToNext()
@@ -86,6 +99,7 @@ function Game()
         setIsCorrect(false);
         setUserAnswer(null);
         setQuestion(0);
+        setScore(0);
     }
 
     function getSourceElement()
@@ -120,12 +134,13 @@ function Game()
         <input type="text" readOnly value={shuffledQuestions[question].prompt}/>
             {
                 shuffledQuestions[question].options.map((o, i) => {
-                    return <button onClick={()=>{checkAnswer(i)}} className={`option ${getClass(i)}`} type="button">{o}</button>
+                    return <button onClick={()=>{checkAnswer(i)}} className={`option ${getClass(i)}`} type="button" disabled={userAnswer !== null ? true : false}>{o}</button>
                 })
             }
         {
             buttonToShow
         }
+        <p>Score: <span>{score}</span></p>
     </>);
 }
 
