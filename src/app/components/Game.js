@@ -29,6 +29,20 @@ const questions = [
         options: ["Morning dew", "Worm", "Virus", "AUX cord"],
         answer: 1,
         source: "William Camden’s Book of Proverbs"
+    },
+    {
+        prompt: "Bowties are _____",
+        cat: "TV",
+        options: ["Hard to tie", "Small", "Cool", "Retro"],
+        answer: 2,
+        source: "Doctor Who (2005-Present)"
+    },
+    {
+        prompt: "Live long and _____",
+        cat: "TV",
+        options: ["Beyond", "Tell the world your story", "Good fortune", "Prosper"],
+        answer: 3,
+        source: "Star Trek (1966-1969)"
     }
 ];
 
