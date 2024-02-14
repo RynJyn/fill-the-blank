@@ -25,7 +25,9 @@ function App()
 
     return (
         <>
-            {displayItem}
+            <main>
+                {displayItem}
+            </main>
         </>
     );
 }
