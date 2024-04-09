@@ -148,7 +148,7 @@ function Game()
         <p>Category: {shuffledQuestions[question].cat}</p>
         <p>Source: {getSourceElement()}</p>
         <h3>{shuffledQuestions[question].prompt}</h3>
-        <div class="options">
+        <div className="options">
             {
                 shuffledQuestions[question].options.map((o, i) => {
                     return <button onClick={()=>{checkAnswer(i)}} className={`option ${getClass(i)}`} type="button" disabled={userAnswer !== null ? true : false}>{o}</button>
