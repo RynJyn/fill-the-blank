@@ -15,7 +15,8 @@ body,html
 
 body 
 {
-    background: #115579;
+    /*background: #115579;*/
+    background: #cbb19b;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,40 +36,5 @@ main
 
     h2, h3, p {
         text-align: center;
-    }
-}
-
-button.option 
-{
-    border: none;
-    background: none;
-}
-
-button.option.correct 
-{
-    background: lightgreen;
-}
-
-button.option.incorrect 
-{
-    background: red;
-}
-
-button.option.actual 
-{
-    animation: highlightAnswer 1s 5;
-    background: gold;
-}
-
-@keyframes highlightAnswer
-{
-    0% {
-        background: gold;
-    }
-    50%{
-        background: initial;
-    }
-    100%{
-        background: gold;
     }
 }
