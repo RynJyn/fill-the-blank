@@ -8,9 +8,17 @@
     font-family: "Segoe UI";
 }
 
+body,html 
+{
+    height: 100%;
+}
+
 body 
 {
     background: #115579;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main 
