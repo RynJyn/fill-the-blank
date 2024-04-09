@@ -14,18 +14,22 @@ function App()
     const [appState, setAppState] = useState(STATE.HOME);
 
     let displayItem;
+    let mainID;
+
     if(appState === STATE.PLAYING)
     {
         displayItem = <Game/>;
+        mainID = "game";
     }
     else 
     {
         displayItem = <Home changeState={()=>{setAppState(STATE.PLAYING)}}/>;
+        mainID = "home";
     }
 
     return (
         <>
-            <main>
+            <main id={mainID}>
                 {displayItem}
             </main>
         </>
