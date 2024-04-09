@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {shuffle} from "../../utils";
 import SubmitBtn from "./ui/SubmitBtn";
 
+import "../styles/Game.scss";
+
 /*** 
  * 
  * TO DO
@@ -120,7 +122,7 @@ function Game()
     {
         if(!hintRevealed)
         {
-            return <button type="button" onClick={()=>{setHintRevealed(true);}}>Click to Reveal</button>
+            return <button type="button" id="reveal-btn" onClick={()=>{setHintRevealed(true);}}>Click to Reveal</button>
         }
         else 
         {
@@ -145,12 +147,14 @@ function Game()
         <h2>Question: {(question + 1)}</h2>
         <p>Category: {shuffledQuestions[question].cat}</p>
         <p>Source: {getSourceElement()}</p>
-        <input type="text" readOnly value={shuffledQuestions[question].prompt}/>
+        <h3>{shuffledQuestions[question].prompt}</h3>
+        <div class="options">
             {
                 shuffledQuestions[question].options.map((o, i) => {
                     return <button onClick={()=>{checkAnswer(i)}} className={`option ${getClass(i)}`} type="button" disabled={userAnswer !== null ? true : false}>{o}</button>
                 })
             }
+        </div>
         {
             buttonToShow
         }
